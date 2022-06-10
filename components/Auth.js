@@ -13,7 +13,7 @@ export default function Auth() {
 
   const login = async () => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URl}api/auth/jwt/create`, {
+      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/auth/jwt/create`, {
         method: "POST",
         body: JSON.stringify({ username: username, password: password }),
         headers: {
@@ -43,7 +43,7 @@ export default function Auth() {
       login();
     } else {
       try {
-        await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URl}api/register/`, {
+        await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/register/`, {
           method: "POST",
           body: JSON.stringify({ username: username, password: password }),
           headers: {
