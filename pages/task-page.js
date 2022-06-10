@@ -20,7 +20,7 @@ export default function TaskPage({ staticfilterdTasks }) {
 
   useEffect(() => {
     mutate(); // useSWRで取得するキャッシュを最新にできる
-  }, []); // マウントされた初回時にのみ実行される
+  }, [mutate]); // マウントされた初回時にのみ実行される
 
   return (
     <Layout title="Task page">
@@ -56,6 +56,6 @@ export async function getStaticProps() {
   const staticfilterdTasks = await getAllTasksData();
   return {
     props: { staticfilterdTasks },
-    revalidate: 3,
+    revalidate: 3, // ISRを有効化
   };
 }

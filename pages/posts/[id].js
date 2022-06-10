@@ -57,6 +57,6 @@ export async function getStaticProps({ params }) {
     props: {
       post,
     },
-    revalidate: 3,
+    revalidate: 3, // ISRを有効化
   };
 }
